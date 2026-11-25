@@ -44,3 +44,13 @@ h2,.card b{font:750 clamp(2.1rem,3.7vw,3.8rem)/1.05 "Helvetica Neue",Arial,sans-
 #servicios h2 { color: inherit; }
 #servicios details { border-color: currentColor; }
 #servicios :focus-visible { outline-color: currentColor; }
+
+.hero .yoga-art {
+  width: calc(100% + max(5vw, (100vw - 1360px) / 2));
+  max-width: none;
+  height: auto;
+  justify-self: start;
+}
+@media (max-width: 600px) {
+  .hero .yoga-art { width: 94vw; justify-self: end; margin: 1rem -5vw 0 0; }
+}
