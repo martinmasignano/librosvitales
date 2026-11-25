@@ -30,4 +30,4 @@ h2,.card b{font:750 clamp(2.1rem,3.7vw,3.8rem)/1.05 "Helvetica Neue",Arial,sans-
 .hero .button { background: white; color: var(--accent); }
 .hero :focus-visible { outline-color: white; }
 
-.brand img { display: block; width: 7rem; height: auto; }
+.brand img { display: block; width: 9.125rem; height: auto; }
