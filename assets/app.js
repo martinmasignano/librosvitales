@@ -1,0 +1,15 @@
+const entries = [
+  {title:'Yoga', author:'Emmanuel Carrère', genre:'Narrativa autobiográfica', cover:'yoga', copy:['Carrère empieza con el propósito de escribir un libro sobre el yoga. El problema, para el escritor, es también la suerte del lector. Apenas intenta fijar la atención en la respiración, aparece ese personaje verborrágico que conocemos de sus otros libros. Quiere observar el yo y enseguida tiene material para varias páginas sobre sí mismo.','Lo que vuelve singular al libro es que ese chiste inicial se queda sin aire. Cuando irrumpe la depresión, las palabras que servían para describir una sesión de meditación empiezan a pesar distinto. Vale la pena leerlo siguiendo ese cambio de tono.']},
+  {title:'Los diarios de Emilio Renzi', author:'Ricardo Piglia', genre:'Diarios', cover:'renzi', copy:['En un diario uno espera encontrar lo que pasó. Piglia también anota lo que podría hacer con eso que pasó. Entre una cosa y otra cabe una vida de escritor. Una charla escuchada al pasar puede ocupar menos espacio que la discusión sobre cómo contarla.','Leer unas pocas entradas por vez tiene su recompensa. Al volver, uno reconoce una preocupación que persiste y descubre que cambió de forma mientras el diarista estaba ocupado en otra cosa. El seudónimo Emilio Renzi agrega una pregunta íntima a la lectura. ¿Quién es ese otro en el que nos convertimos cuando abrimos un cuaderno?']},
+  {title:'La conjura de los necios', author:'John Kennedy Toole', genre:'Novela', cover:'necios', copy:['Ignatius J. Reilly tiene una explicación para todo y una habilidad extraordinaria para empeorar cualquier situación. Toole encuentra la comedia en la distancia entre la importancia que Ignatius se atribuye y las pequeñas obligaciones que le toca cumplir en Nueva Orleans.','Pero el gran placer de la novela está en salir de su cabeza. Cada personaje tiene un vocabulario, una urgencia y una manera de entender el desastre. Cuando esas voces se cruzan, lo que parecía una colección de episodios empieza a funcionar como una comedia de enredos.']}
+];
+const cards=document.querySelector('#cards'), dialog=document.querySelector('dialog');
+entries.forEach(({title,author,genre,cover,copy})=>{
+ const card=document.createElement('button');
+ card.className='card';
+ card.innerHTML='<span class="jacket '+cover+'" aria-hidden="true"><small>'+author+'</small><strong>'+title+'</strong><i></i></span><span class="meta">'+genre+'</span><b>'+title+'</b><span class="author">'+author+'</span>';
+ card.setAttribute('aria-label','Leer reseña de '+title);
+ card.onclick=()=>{document.querySelector('#reading').innerHTML='<div class="by">CUADERNO DE LECTURAS</div><h2>'+title+'</h2><div class="author">'+author+'</div>'+copy.map(p=>'<p>'+p+'</p>').join('');dialog.showModal()};
+ cards.append(card);
+});
+dialog.addEventListener('click',event=>{if(event.target===dialog && !event.target.closest('#reading')){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}});
