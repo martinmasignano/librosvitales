@@ -117,7 +117,16 @@ nav [aria-current="page"] { text-decoration: underline; text-underline-offset: .
 }
 
 html { scroll-padding-top: 7rem; }
-header { position: sticky; top: 0; z-index: 10; background: var(--paper); }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--accent);
+  color: var(--paper);
+  border-bottom: 0;
+}
+header .brand { color: inherit; }
+header :focus-visible { outline-color: var(--paper); }
 .footer-links, .footer-info, .social-links { display: flex; align-items: center; }
 .footer-links, .footer-info { flex-wrap: wrap; gap: 1rem; }
 .footer-links a { font-weight: 650; }
