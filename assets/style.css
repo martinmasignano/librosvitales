@@ -42,7 +42,21 @@ h2,.card b{font:750 clamp(2.1rem,3.7vw,3.8rem)/1.05 "Helvetica Neue",Arial,sans-
 .yoga i, .necios i, .renzi i { opacity: .25; }
 #servicios { background: var(--accent); color: var(--paper); }
 #servicios h2 { color: inherit; }
-#servicios details { border-color: currentColor; }
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3.5rem);
+}
+.service-block {
+  border-top: 1px solid currentColor;
+  padding-top: 1.25rem;
+}
+.service-block svg { display: block; width: 3rem; height: 3rem; }
+.service-block h3 { margin: 1rem 0 .6rem; font-size: clamp(1.4rem, 2.2vw, 2rem); line-height: 1.1; letter-spacing: -.04em; }
+.service-block p { max-width: 44ch; }
+@media (max-width: 47.99rem) {
+  .service-grid { grid-template-columns: 1fr; }
+}
 #servicios :focus-visible { outline-color: currentColor; }
 
 .hero .yoga-art {
