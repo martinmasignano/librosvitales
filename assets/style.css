@@ -130,12 +130,14 @@ header :focus-visible { outline-color: var(--paper); }
 .footer-links, .footer-info, .social-links { display: flex; align-items: center; }
 .footer-links, .footer-info { flex-wrap: wrap; gap: 1rem; }
 .footer-links a { font-weight: 650; }
+footer { color: var(--paper); background: var(--accent); border-top: 0; }
+footer :focus-visible { outline-color: var(--paper); }
 footer svg { display: block; }
 .social-links a { display: grid; place-items: center; width: 40px; height: 40px; }
 .social-detail { color: var(--social-detail, inherit); fill: currentColor; }
 .social-links a:is(:hover, :focus-visible) {
   --social-fill: currentColor;
-  --social-detail: var(--paper);
+  --social-detail: var(--accent);
 }
 @media (max-width: 40rem) {
   footer { flex-direction: column; align-items: flex-start; }
