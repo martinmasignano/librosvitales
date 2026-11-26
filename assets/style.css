@@ -40,7 +40,10 @@ h2,.card b{font:750 clamp(2.1rem,3.7vw,3.8rem)/1.05 "Helvetica Neue",Arial,sans-
 
 .jacket { border: 1px solid currentColor; }
 .yoga i, .necios i, .renzi i { opacity: .25; }
-#servicios { background: var(--accent); color: var(--paper); }
+#servicios { color: var(--ink); }
+#lecturas { background: var(--accent); color: var(--paper); }
+#lecturas h2, #lecturas .sectionhead span, #lecturas .meta, #lecturas .author { color: inherit; }
+#lecturas :focus-visible { outline-color: var(--paper); }
 #servicios h2 { color: inherit; }
 .service-grid {
   display: grid;
