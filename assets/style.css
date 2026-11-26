@@ -73,14 +73,29 @@ h2,.card b{font:750 clamp(2.1rem,3.7vw,3.8rem)/1.05 "Helvetica Neue",Arial,sans-
 }
 
 #newsletter {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  border-top: 1px solid var(--ink);
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  padding-block: clamp(3rem, 6vw, 6rem);
+  text-align: center;
 }
-#newsletter p { margin-top: .75rem; }
+#newsletter p { margin-top: .6rem; }
+#contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: center;
+  background: var(--accent);
+  color: var(--paper);
+}
+#contacto h2 { color: inherit; font-size: clamp(2.6rem, 5.6vw, 5rem); }
+#contacto em { display: block; font-family: Georgia, serif; font-weight: 400; }
+#contacto p { max-width: 40ch; margin: 0; }
+.contact-link { display: inline-block; margin-top: 1rem; font-weight: 650; text-decoration: underline; text-underline-offset: .25em; }
+.contact-link:focus-visible { outline-color: currentColor; }
+@media (max-width: 42rem) {
+  #contacto { grid-template-columns: 1fr; gap: 1.25rem; }
+}
 #servicios { border-top-color: var(--paper); }
 @media (max-width: 600px) {
   nav { flex-wrap: wrap; justify-content: flex-start; gap: .5rem 1rem; }
