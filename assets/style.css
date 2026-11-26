@@ -100,3 +100,18 @@ h2,.card b{font:750 clamp(2.1rem,3.7vw,3.8rem)/1.05 "Helvetica Neue",Arial,sans-
 @media (max-width: 600px) {
   nav { flex-wrap: wrap; justify-content: flex-start; gap: .5rem 1rem; }
 }
+
+.about-page { padding: clamp(2rem, 5vw, 5rem) max(5vw, calc((100vw - 1360px)/2)); }
+.about-page h1 { margin: 0 0 .45em; }
+.about-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.65fr); align-items: start; gap: clamp(2rem, 5vw, 5rem); }
+.about-photo { width: 100%; height: auto; display: block; }
+.about-copy { max-width: 62ch; font: 1.2rem/1.6 Georgia, serif; }
+.about-copy p + p { margin-top: 1em; }
+.about-copy p:first-child { font: bold 1.65rem/1.2 "Helvetica Neue", Arial, sans-serif; }
+nav [aria-current="page"] { text-decoration: underline; text-underline-offset: .25em; }
+@media (max-width: 48rem) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-photo { max-width: 24rem; }
+  header { flex-wrap: wrap; }
+  nav { flex-wrap: wrap; }
+}
