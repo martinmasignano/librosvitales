@@ -9,7 +9,7 @@ entries.forEach(({title,author,genre,cover,copy})=>{
  card.className='card';
  card.innerHTML='<span class="jacket '+cover+'" aria-hidden="true"><small>'+author+'</small><strong>'+title+'</strong><i></i></span><span class="meta">'+genre+'</span><b>'+title+'</b><span class="author">'+author+'</span>';
  card.setAttribute('aria-label','Leer reseña de '+title);
- card.onclick=()=>{document.querySelector('#reading').innerHTML='<div class="by">CUADERNO DE LECTURAS</div><h2>'+title+'</h2><div class="author">'+author+'</div>'+copy.map(p=>'<p>'+p+'</p>').join('');dialog.showModal()};
+ card.onclick=()=>{document.querySelector('#reading').innerHTML='<div class="by">CUADERNO</div><h2>'+title+'</h2><div class="author">'+author+'</div>'+copy.map(p=>'<p>'+p+'</p>').join('');dialog.showModal()};
  cards.append(card);
 });
 dialog.addEventListener('click',event=>{if(event.target===dialog && !event.target.closest('#reading')){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close()}});
